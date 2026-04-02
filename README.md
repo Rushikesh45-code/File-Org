@@ -1,159 +1,122 @@
-# 📁 File Organizer - Smart File Sorter
+# 📁 File Organizer — Smart File Sorter
 
-A Python script that automatically organizes your messy folders by sorting files into categorized folders based on their type (Images, Documents, Videos, Music, etc.).
+Automatically organizes messy folders by sorting files into categorized folders based on their type.
+
+---
 
 ## ✨ Features
 
-- 🔍 **Smart Categorization** - Sorts files into logical folders (Images, Documents, Videos, etc.)
-- 📁 **Custom Folder Names** - Creates clean, readable folder names instead of technical extensions
-- 🔄 **Duplicate Handling** - Automatically renames duplicate files to avoid overwriting
-- 🎯 **Leaves Folders Intact** - Only sorts files, doesn't touch existing subfolders
-- 📊 **Detailed Summary** - Shows what was moved and which folders were created
-- 🛡️ **Safe Operation** - Asks for confirmation before making any changes
+- 🔍 **Smart Categorization** — Sorts files into logical folders (Images, Documents, Videos, etc.)
+- 🔄 **Duplicate Handling** — Automatically renames duplicate files to avoid overwriting
+- 🎯 **Leaves Folders Intact** — Only sorts files, doesn't touch existing subfolders
+- 📊 **Detailed Summary** — Shows what was moved and which folders were created
+- 🛡️ **Safe Operation** — Asks for confirmation before making any changes
+- 📦 **No Dependencies** — Uses Python 3.6+ standard library only
 
-## 📋 Requirements
+---
 
-- Python 3.6 or higher
-- No external libraries required! (uses only Python standard library)
+## 🚀 Quick Start
 
-## 🚀 Installation
+1. Save `sort_files.py` to your computer
+2. Open terminal or command prompt
+3. Run: `python sort_files.py "/path/to/your/folder"`
+4. Type `yes` when prompted — done!
 
-1. **Download the script**
-   - Save the `sort_files.py` file to your computer
-
-2. **No installation needed** - Just Python is required
+---
 
 ## 💻 Usage
 
-### Basic Usage
+**Windows:**
 ```bash
-python sort_files.py "C:\path\to\your\folder"
-Examples
-Windows:
-
-bash
 python sort_files.py "C:\Users\Rushi\Downloads"
 python sort_files.py "D:\My Documents\Unsorted"
-Linux/Mac:
+```
 
-bash
+**Linux / macOS:**
+```bash
 python sort_files.py "/home/username/Downloads"
 python sort_files.py "~/Desktop/Unsorted"
-What happens when you run it:
-The script asks for confirmation
+```
 
-Creates category folders (Images, Documents, etc.)
+---
 
-Moves files into appropriate folders
+## 📂 File Categories
 
-Shows a summary of what was done
+| Category      | Extensions                                              |
+|---------------|---------------------------------------------------------|
+| Images        | `.jpg` `.jpeg` `.png` `.gif` `.bmp` `.svg` `.webp` `.ico` |
+| Videos        | `.mp4` `.avi` `.mkv` `.mov` `.wmv` `.flv` `.webm` `.m4v` |
+| Music         | `.mp3` `.wav` `.flac` `.aac` `.ogg` `.m4a` `.wma`      |
+| Documents     | `.pdf` `.doc` `.docx` `.txt` `.rtf` `.odt`              |
+| Spreadsheets  | `.xls` `.xlsx` `.csv` `.ods`                            |
+| Presentations | `.ppt` `.pptx` `.odp`                                   |
+| Archives      | `.zip` `.rar` `.7z` `.tar` `.gz` `.bz2`                 |
+| Code          | `.py` `.js` `.html` `.css` `.java` `.cpp` `.c` `.php` `.rb` `.go` `.json` `.xml` |
+| Executables   | `.exe` `.msi` `.app` `.deb` `.rpm`                      |
+| Others        | Any other extension → `EXTENSION_Files/` folder        |
 
-📂 File Categories
-Category	File Types
-Images	.jpg, .jpeg, .png, .gif, .bmp, .svg, .webp, .ico
-Videos	.mp4, .avi, .mkv, .mov, .wmv, .flv, .webm, .m4v
-Music	.mp3, .wav, .flac, .aac, .ogg, .m4a, .wma
-Documents	.pdf, .doc, .docx, .txt, .rtf, .odt
-Spreadsheets	.xls, .xlsx, .csv, .ods
-Presentations	.ppt, .pptx, .odp
-Archives	.zip, .rar, .7z, .tar, .gz, .bz2
-Code	.py, .js, .html, .css, .java, .cpp, .c, .php, .rb, .go, .json, .xml
-Executables	.exe, .msi, .app, .deb, .rpm
-Others	Any other extension (creates EXTENSION_Files folder)
-📊 Example Output
-text
+---
+
+## 📊 Example Output
+```
 📂 Target folder: C:\Users\Rushi\Downloads
-
 Continue with sorting? (yes/no): yes
 
-📁 Sorting files in: C:\Users\Rushi\Downloads
+Sorting files in: C:\Users\Rushi\Downloads
 ==================================================
 📁 Created folder: Images
-✅ Moved: vacation.jpg -> Images/
+✅ Moved: vacation.jpg → Images/
 📁 Created folder: Documents
-✅ Moved: report.pdf -> Documents/
-✅ Moved: notes.txt -> Documents/
+✅ Moved: report.pdf → Documents/
+✅ Moved: notes.txt → Documents/
 📁 Created folder: Music
-✅ Moved: song.mp3 -> Music/
+✅ Moved: song.mp3 → Music/
 ==================================================
-📊 Summary:
-   • Files moved: 4
-   • Folders created: 3
-   • Created folders: Documents, Images, Music
+Summary: 4 files moved · 3 folders created
 ==================================================
+```
 
-✨ Done! Files have been sorted by type.
-🎨 Customization
-Changing Folder Names
-Edit the get_folder_name() function in the script:
+---
 
-python
-# Change this:
-return "Images"
+## 🎨 Customization
 
-# To this:
-return "Pictures"  # or "Photos" or "MyImages"
-Adding New File Types
-Add new extensions to the existing categories:
+**Rename a category:**
+```python
+return "Pictures"  # instead of "Images"
+```
 
-python
-elif extension in ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg', 'webp', 'ico', 'raw', 'psd']:
+**Add new file extensions:**
+```python
+elif extension in ['jpg', 'jpeg', 'png', 'gif', 'raw', 'psd']:
     return "Images"
-Creating New Categories
-Add a new category:
+```
 
-python
+**Create a new category:**
+```python
 elif extension in ['iso', 'img', 'dmg']:
     return "Disk_Images"
-🔧 Troubleshooting
-Error: "Directory does not exist"
-Make sure the folder path is correct
+```
 
-Use absolute paths or proper relative paths
+---
 
-On Windows, use backslashes or forward slashes
+## 🔧 Troubleshooting
 
-Error: "Permission denied"
-Make sure you have write permissions for the folder
+| Error | Fix |
+|-------|-----|
+| `Directory does not exist` | Check the folder path; use absolute paths |
+| `Permission denied` | Ensure you have write access; close any apps using the files |
+| Files not moving | Files may already be sorted; the script skips organized files |
 
-Close any programs that might be using the files
+---
 
-Files not moving
-Check if files are already in sorted folders
+## 📝 Notes
 
-The script skips files that are already organized
+- Only files are moved — existing subfolders remain untouched
+- Duplicate files are renamed with a number suffix (e.g. `file_1.txt`)
+- The operation can be cancelled before any changes are made
 
-📝 Notes
-The script only sorts files, not folders
+---
 
-Existing subfolders remain untouched
+## 📄 License
 
-Duplicate files are renamed with numbers (e.g., file_1.txt)
-
-The operation can be cancelled before any changes are made
-
-🤝 Contributing
-Feel free to submit issues or pull requests for:
-
-New file type categories
-
-Better duplicate handling
-
-Performance improvements
-
-📄 License
-MIT License - Free for personal and commercial use
-
-⭐ Support
-If you find this script useful, please give it a star! ⭐
-
-Quick Start
-Save sort_files.py to your computer
-
-Open terminal/command prompt
-
-Run: python sort_files.py "C:\path\to\your\folder"
-
-Type yes when prompted
-
-Done! Your files are now organized!
+MIT License — free for personal and commercial use.
