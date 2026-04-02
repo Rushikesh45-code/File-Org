@@ -28,7 +28,7 @@ Automatically organizes messy folders by sorting files into categorized folders 
 
 **Windows:**
 ```bash
-python sort_files.py "C:\Users\Rushi\Downloads"
+python sort_files.py "C:\Users\username\Downloads"
 python sort_files.py "D:\My Documents\Unsorted"
 ```
 
@@ -59,10 +59,10 @@ python sort_files.py "~/Desktop/Unsorted"
 
 ## 📊 Example Output
 ```
-📂 Target folder: C:\Users\Rushi\Downloads
+📂 Target folder: C:\Users\username\Downloads
 Continue with sorting? (yes/no): yes
 
-Sorting files in: C:\Users\Rushi\Downloads
+Sorting files in: C:\Users\username\Downloads
 ==================================================
 📁 Created folder: Images
 ✅ Moved: vacation.jpg → Images/
