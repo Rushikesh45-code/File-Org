@@ -121,4 +121,4 @@ elif extension in ['iso', 'img', 'dmg']:
 
 MIT License — free for personal and commercial use.
 
-## Vibe Coded but features and idea was mine and fixed some error
+## Vibe Coded but features and idea are mine and fixed some error
