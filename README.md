@@ -17,9 +17,9 @@ Automatically organizes messy folders by sorting files into categorized folders 
 
 ## 🚀 Quick Start
 
-1. Save `sort_files.py` to your computer
+1. Save `main.py` to your computer
 2. Open terminal or command prompt
-3. Run: `python sort_files.py "/path/to/your/folder"`
+3. Run: `python main.py "/path/to/your/folder"`
 4. Type `yes` when prompted — done!
 
 ---
@@ -28,14 +28,14 @@ Automatically organizes messy folders by sorting files into categorized folders 
 
 **Windows:**
 ```bash
-python sort_files.py "C:\Users\username\Downloads"
-python sort_files.py "D:\My Documents\Unsorted"
+python main.py "C:\Users\username\Downloads"
+python main.py "D:\My Documents\Unsorted"
 ```
 
 **Linux / macOS:**
 ```bash
-python sort_files.py "/home/username/Downloads"
-python sort_files.py "~/Desktop/Unsorted"
+python main.py "/home/username/Downloads"
+python main.py "~/Desktop/Unsorted"
 ```
 
 ---
